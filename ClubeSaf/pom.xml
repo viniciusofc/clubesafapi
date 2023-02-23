@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.apirepresentante</groupId>
-	<artifactId>gruposaf</artifactId>
+	<artifactId>ClubeSafApi</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
-	<name>gruposaf</name>
+	<name>ClubeSafApi</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
