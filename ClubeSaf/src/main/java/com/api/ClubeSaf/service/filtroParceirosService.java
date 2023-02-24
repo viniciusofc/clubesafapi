@@ -15,9 +15,17 @@ public class filtroParceirosService {
 	@Autowired
 	private filtroParceirosRepository FiltroParceirosepository;
 	
-	public List<filtroParceiros> ParceirosFiltro(Long idEmp, Long idCid, Long idSeg) {
-		List<filtroParceiros> result = FiltroParceirosepository.findByListaAllParceiros(idEmp, idCid, idSeg);
-		System.out.println(result);
+	public List<filtroParceiros> ParceirosFiltro(Long idEmp, String cidade, Long idSeg) {
+		List<filtroParceiros> result = FiltroParceirosepository.findByListaAllParceiros(idEmp, cidade, idSeg);
+		if (result != null) {
+			return result;
+		} else {
+			return null;
+		}
+	}
+	
+	public List<filtroParceiros> ParceirosFiltroGeral(Long idEmp, String param) {
+		List<filtroParceiros> result = FiltroParceirosepository.findByFiltroGeralParceiros(idEmp, param);
 		if (result != null) {
 			return result;
 		} else {

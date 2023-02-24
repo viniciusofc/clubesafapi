@@ -27,8 +27,15 @@ public class filtroParceiros {
     
     private String numero;
     
-    @Column(name = "telcel1")
-    private String contato;
+    private String atividade;
+    
+    private String facebook;
+    
+	@Column(name = "telcel1")
+    private String tel1;
+	
+	@Column(name = "telcel2")
+    private String tel2;
 
 	public Long getId() {
 		return id;
@@ -59,10 +66,25 @@ public class filtroParceiros {
 	}
 
 	public String getContato() {
-		return contato;
+		return tel1;
+	}
+
+	public String getAtividade() {
+		return atividade;
 	}
     
   
-	
+	public String getFacebook() {
+			return facebook;
+	}
+
+	public String getTel1() {
+		return tel1;
+	}
+
+	public String getTel2() {
+		return tel2;
+	}
+
 
 }

@@ -22,9 +22,15 @@ public class filtroParceirosController {
 	@Autowired
 	private filtroParceirosService  FiltroParceirosService;
 	
-	@GetMapping("/listar/{idEmp}/{idCid}/{idSeg}")
-	public ResponseEntity<Object> listaResultFiltroParceiros(@PathVariable Long idEmp, @PathVariable Long idCid, @PathVariable Long idSeg){
-		List<filtroParceiros> result = FiltroParceirosService.ParceirosFiltro(idEmp, idCid, idSeg);
+	@GetMapping("/listar/{idEmp}/{cidade}/{idSeg}")
+	public ResponseEntity<Object> listaResultFiltroParceiros(@PathVariable Long idEmp, @PathVariable String cidade, @PathVariable Long idSeg){
+		List<filtroParceiros> result = FiltroParceirosService.ParceirosFiltro(idEmp, cidade, idSeg);
+		return ResponseEntity.ok(result);
+	}
+	
+	@GetMapping("/listar/geral/{idEmp}/{param}")
+	public ResponseEntity<Object> listaResultFiltroParceirosGeral(@PathVariable Long idEmp, @PathVariable String  param){
+		List<filtroParceiros> result = FiltroParceirosService.ParceirosFiltroGeral(idEmp, param);
 		return ResponseEntity.ok(result);
 	}
 }

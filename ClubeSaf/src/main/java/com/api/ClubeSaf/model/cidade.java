@@ -6,13 +6,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "gr_cidades")
+@Table(name = "gr_parceiros")
 public class cidade {
 
-	@Id
-	@Column(name = "id_cidade")
 	private Long id;
 	
+	@Id
 	@Column(name = "cidade")
 	private String label;
 

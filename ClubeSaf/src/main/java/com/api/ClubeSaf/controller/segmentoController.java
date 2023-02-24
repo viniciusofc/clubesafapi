@@ -20,9 +20,9 @@ public class segmentoController {
 	@Autowired
 	private segmentoService segmentoservice;
 	
-	@GetMapping("/listar/{idPlano}/{idCid}")
-	public ResponseEntity<Object> listaSegmentos(@PathVariable Long idPlano, @PathVariable Long idCid){
-		List<segmento> result = segmentoservice.filtrarSegmentos(idPlano, idCid);
+	@GetMapping("/listar/{idPlano}/{cidade}")
+	public ResponseEntity<Object> listaSegmentos(@PathVariable Long idPlano, @PathVariable String cidade){
+		List<segmento> result = segmentoservice.filtrarSegmentos(idPlano, cidade);
 		return ResponseEntity.ok(result);
 	}
 	

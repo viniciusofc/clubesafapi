@@ -13,8 +13,8 @@ public class segmentoService {
 	@Autowired
 	private segmentoRepository segmentorepository;
 	
-	public List<segmento> filtrarSegmentos(Long idPlano, Long idCid){
-		List<segmento> result = segmentorepository.findByLista(idPlano, idCid);
+	public List<segmento> filtrarSegmentos(Long idPlano, String cidade){
+		List<segmento> result = segmentorepository.findByLista(idPlano, cidade);
 		if ( result != null) {
 			return result;
 		} else {
