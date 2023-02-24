@@ -9,23 +9,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.api.ClubeSaf.model.filtroGeral;
 import com.api.ClubeSaf.model.segmento;
-import com.api.ClubeSaf.service.segmentoService;
+import com.api.ClubeSaf.service.filtroGeralService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/segmentos")
-public class segmentoController {
+@RequestMapping("/geral")
+public class filtroGeralController {
 
 	@Autowired
-	private segmentoService segmentoservice;
+	private filtroGeralService filtroGeralservice;
 	
-	@GetMapping("/listar/{idPlano}/{idCid}")
-	public ResponseEntity<Object> listaSegmentos(@PathVariable Long idPlano, @PathVariable Long idCid){
-		List<segmento> result = segmentoservice.filtrarSegmentos(idPlano, idCid);
+	@GetMapping("/lista/{id}")
+	public ResponseEntity<Object> listaSegmentosAll(@PathVariable Long id){
+		List<filtroGeral> result = filtroGeralservice.filtrarSegmentosAll(id);
 		return ResponseEntity.ok(result);
 	}
-	
-	
-	
 }
