@@ -31,6 +31,10 @@ public class filtroParceiros {
     
     private String facebook;
     
+    private String email;
+    
+    private String complemento;
+    
 	@Column(name = "telcel1")
     private String tel1;
 	
@@ -84,6 +88,14 @@ public class filtroParceiros {
 
 	public String getTel2() {
 		return tel2;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getComplemento() {
+		return complemento;
 	}
 
 
