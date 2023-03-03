@@ -31,6 +31,10 @@ public class filtroParceiros {
     
     private String facebook;
     
+    private String bairro;
+    
+    private String referencia;
+    
     private String email;
     
     private String complemento;
@@ -96,6 +100,14 @@ public class filtroParceiros {
 
 	public String getComplemento() {
 		return complemento;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public String getReferencia() {
+		return referencia;
 	}
 
 
